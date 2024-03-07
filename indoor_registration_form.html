@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Indoor Basketball Gym Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <style>
+      html, body {
+      min-height: 100%;
+      background: #0080FF;
+      }
+      body, div, input, select, label, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      
+      h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 34px;
+      color: #fff;
+      z-index: 2;
+      line-height: 83px;
+      }
+
+      h2{
+      font-size: 50px;
+      color: #0D1847;
+      font-family: sans-serif;
+    
+      }
+      .spn{
+      background: #0D1847;
+      color: #F5AF43;
+      padding: 10px 20px;
+      font-family: sans-serif;
+
+      }
+      form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: auto;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 8px  #669999; 
+      }
+      .banner {
+      position: relative;
+      height: 100px;
+      background-image: url("pictures/Hoopbook.png");  
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.2); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      input, select{
+      /* margin-bottom: 10px; */
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+    
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color:  #669999;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 3px 0  #669999;
+      color: #669999;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .item span {
+      color: red;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color:  #a3c2c2;
+      }
+      .item i {
+      right: 1%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type=radio], input[type=checkbox]  {
+      display: none;
+      }
+      label.radio {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 15px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      .question-answer label {
+      display: block;
+      }
+      label.radio:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+      input[type=radio]:checked + label:before, label.radio:hover:before {
+      border: 2px solid  #669999;
+      }
+      label.radio:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid  #669999;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+      opacity: 1;
+      }
+      .flax {
+      display:flex;
+      justify-content:space-around;
+      }
+      .btn-block {
+      margin-top: 15px;
+      text-align: center;
+      
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #172744 ;
+      font-size: 16px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+      }
+
+      button:hover {
+       color:#F5AF43;
+      }
+      button:active {
+       transform: scale(.98);
+      }
+
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .name-item div {
+      width: calc(50% - 20px);
+      }
+      .name-item div input {
+      width:97%;}
+      .name-item div label {
+      display:block;
+      padding-bottom:5px;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+      <form action="/">
+        <div class="banner">
+          <h2>HOOP<span class="spn">BOOK</h2>
+        </div>
+        <div class="item">
+            <label for="facilities">Facilities<span>*</span></label>
+            <input id="facilities" type="text" name="facilities" value="Covered Court">
+          </div>
+        <div class="item">
+          <label for="name">Name<span>*</span></label>
+          <input id="name" type="text" name="name" required/>
+        </div>
+        <div class="item">
+          <label for="email">Email Address<span>*</span></label>
+          <input id="email" type="email" name="email" required/>
+        </div>
+        <div class="item">
+          <label for="phone">Phone<span>*</span></label>
+          <input id="phone" type="number" placeholder="(XXX) XXX-XXXX"  name="phone" required/>
+        </div>
+        <div class="item">
+          <label for="bdate">Date<span>*</span></label>
+          <input id="bdate" type="date" name="bdate" required/>
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="flax">
+          <div class="item">
+            <p>Start Time</p>
+            <select>
+              <option selected value="" disabled selected></option>
+              <option value="8A" >8 AM</option>
+              <option value="9A">9 AM</option>
+              <option value="10A">10 AM</option>
+              <option value="11A">11 Am</option>
+              <option value="12P">12 Pm</option>
+              <option value="1P">1 Pm</option>
+              <option value="2P">2 Pm</option>
+              <option value="3P">3 Pm</option>
+              <option value="4P">4 Pm</option>
+              <option value="5P">5 Pm</option>
+              <option value="6P">6 Pm</option>
+              <option value="7P">7 Pm</option>
+              <option value="8P">8 Pm</option>
+            </select>
+          </div>
+          <div class="item">
+            <p>End Time</p>
+            <select>
+              <option selected value="" disabled selected></option>
+              <option value="8A" >8 AM</option>
+              <option value="9A">9 AM</option>
+              <option value="10A">10 AM</option>
+              <option value="11A">11 Am</option>
+              <option value="12P">12 Pm</option>
+              <option value="1P">1 Pm</option>
+              <option value="2P">2 Pm</option>
+              <option value="3P">3 Pm</option>
+              <option value="4P">4 Pm</option>
+              <option value="5P">5 Pm</option>
+              <option value="6P">6 Pm</option>
+              <option value="7P">7 Pm</option>
+              <option value="8P">8 Pm</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-block">
+          <button type="submit" href="/">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
